@@ -6,7 +6,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://ghugeleenavijay28:2807@cluster0.q30zfzy.mongodb.net/leaderboard?retryWrites=true&w=majority&appName=Cluster0', {
+// mongoose.connect('mongodb+srv://ghugeleenavijay28:2807@cluster0.q30zfzy.mongodb.net/leaderboard?retryWrites=true&w=majority&appName=Cluster0', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
